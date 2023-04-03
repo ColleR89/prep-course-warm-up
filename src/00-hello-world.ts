@@ -11,8 +11,8 @@ export {};
  *  - https://www.youtube.com/watch?v=xUI5Tsl2JpY (Modern JavaScript Tutorial #4 - Functions)
  */
 
-const helloWorld = function() {
-  return "";
+const helloWorld = function () {
+  return "Hello World";
 };
 
-console.log(); // Expected output: "Hello World"
+console.log(helloWorld()); // Expected output: "Hello World"
