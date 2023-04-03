@@ -1,7 +1,7 @@
 export {};
 
-function addNumbers(a b c) {
-    return a + b + c;
+function addNumbers(a: number, b: number, c: number) {
+  return a + b + c;
 }
 
 const result = addNumbers(1, 3, 4);
