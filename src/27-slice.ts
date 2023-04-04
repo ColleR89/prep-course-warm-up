@@ -7,4 +7,8 @@ export {};
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8]; // You are NOT allowed to edit this line
 const first5Numbers = first5(numbers); // You are NOT allowed to edit this line
 
+function first5(nums: number[]): number[] {
+  return nums.slice(0, 5);
+}
+
 console.log(first5Numbers); // Expected result: [1, 2, 3, 4, 5]
