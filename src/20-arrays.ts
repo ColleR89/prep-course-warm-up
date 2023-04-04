@@ -8,4 +8,8 @@ export {};
  *  - https://javascript.info/array
  */
 
+function stringToArray(str: string[]) {
+  return str[0].split(" "); //Izvedu, ko vajag, bet, ja ieejā būs (["John Doe"], ["Vasja Pupkin"]), vajadzēju ar for() palīdzību katru rindu atsevišķi splitēt
+}
+
 console.log(stringToArray(["John Doe"])); // Expected output: ['John', 'Doe']
