@@ -16,8 +16,8 @@ export {};
 function calculateSalesTax(cena: number): number {
   let pvn: number = 0.21;
   let musuPvn: number;
-  musuPvn = cena * pvn;
-  musuPvn = Math.round(musuPvn * 100) / 100;
+  //PHP ar round() kaut kā labāk ir :D
+  musuPvn = +(Math.round(cena * pvn * 100) / 100).toFixed(2); //Ar + priekšā konvertēju number formātā, bet tiek pazaudēta 0 galā...
   return musuPvn;
 }
 
@@ -28,7 +28,7 @@ const salesTax = calculateSalesTax(price);
 console.log("Product: " + product);
 console.log("Price: £" + price);
 console.log("Sales tax: £" + salesTax);
-console.log("Total: £" + Math.round((price + salesTax) * 100) / 100);
+console.log("Total: £" + (price + salesTax).toFixed(2)); //Nācās ielikt toFixed(2), lai nebūtu daudz ciparu aiz komata...
 
 /* Expected output:
 
