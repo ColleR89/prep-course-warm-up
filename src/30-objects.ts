@@ -12,14 +12,21 @@ export {};
 const books = [
   {
     title: "4 hour work week",
-    author: "Tim Ferris"
+    author: "Tim Ferris",
   },
   {
     title: "Tools of Titans",
-    author: "Tim Ferris"
-  }
+    author: "Tim Ferris",
+  },
 ];
 
-const getTheTitles = () => {};
+const getTheTitles = (books: any): string[] => {
+  let i: number;
+  let titles: string[] = Array();
+  for (i = 0; i < books.length; i++) {
+    titles[i] = books[i].title;
+  }
+  return titles;
+};
 
 console.log(getTheTitles(books)); // Expected output: ['4 hour work week', 'Tools of Titans']
