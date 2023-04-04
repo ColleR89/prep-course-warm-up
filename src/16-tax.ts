@@ -13,7 +13,13 @@ export {};
  */
 
 // You are allowed to change only this function
-function calculateSalesTax() {}
+function calculateSalesTax(cena: number): number {
+  let pvn: number = 0.21;
+  let musuPvn: number;
+  musuPvn = cena * pvn;
+  musuPvn = Math.round(musuPvn * 100) / 100;
+  return musuPvn;
+}
 
 const product = "You don't know JS";
 const price = 19.99;
@@ -22,7 +28,7 @@ const salesTax = calculateSalesTax(price);
 console.log("Product: " + product);
 console.log("Price: £" + price);
 console.log("Sales tax: £" + salesTax);
-console.log("Total: £" + (price + salesTax));
+console.log("Total: £" + Math.round((price + salesTax) * 100) / 100);
 
 /* Expected output:
 
