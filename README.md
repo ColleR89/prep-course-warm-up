@@ -19,8 +19,8 @@ Here is a short video which explains what is `npm` and `libraries` / `packages` 
 ## Executing Code
 
 In the `src` directory are many code puzzles which you need to solve.
-
-Start in ascending order, read the description and execute each file like this `npm run ts src/00-hello-world.ts`
+npm run ts src/00-hello-world.ts
+Start in ascending order, read the description and execute each file like this ``
 
 ### Why there is `export {};` at the beginning of each file?
 
