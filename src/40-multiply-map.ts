@@ -8,10 +8,16 @@ export {};
  * and recreate the logic yourself.
  */
 
-const map = () => {};
+const map = (number: number[], callback: any): number[] => {
+  for (let i: number = 0; i < number.length; i++) {
+    number[i] = callback(number[i]);
+  }
+  return number;
+};
 
 const numbers = [1, 2, 3];
-const doubled = map(numbers, function(number) {
+const doubled = map(numbers, function (number: number) {
+  // Nācās pievienot :number, citādāk negribēja kompilēt...
   return number * 2;
 });
 console.log(doubled); // Expected result: [2, 4, 6]
