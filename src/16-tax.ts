@@ -13,12 +13,9 @@ export {};
  */
 
 // You are allowed to change only this function
-function calculateSalesTax(cena: number): number {
-  let pvn: number = 0.21;
-  let musuPvn: number;
+function calculateSalesTax(price: number): number {
   //PHP ar round() kaut kā labāk ir :D
-  musuPvn = +(Math.round(cena * pvn * 100) / 100).toFixed(2); //Ar + priekšā konvertēju number formātā, bet tiek pazaudēta 0 galā...
-  return musuPvn;
+  return +(Math.round(price * 0.21 * 100) / 100).toFixed(2); //Ar + priekšā konvertēju number formātā, bet tiek pazaudēta 0 galā...
 }
 
 const product = "You don't know JS";

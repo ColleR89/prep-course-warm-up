@@ -27,23 +27,39 @@ export {};
   return num;
 }*/
 // Konversijas funkcijs, gan USD, gan BRL
-function convertTo(num: number, to: string): number {
+/*function convertTo(num: number, to: string): number {
   let coef: number;
   let fee = 0.01; //1%
   coef = to === "USD" ? 1.25 : 6.33;
   num = +(num * coef).toFixed(2);
   num += +(num * fee).toFixed(2); //1% fee
   return +num.toFixed(2);
+}*/
+
+const FEE_BRL = 0.01;
+const FEE_EUR = 0.05;
+const RATE_GBP_TO_EUR = 1.14;
+const RATE_GBP_TO_BRL = 6.31;
+const RATE_GBP_TO_USD = 1.25;
+
+function convertTo(price: number, rate: number): number {
+  return price * rate;
+}
+
+function addFee(price: number, fee: number): number {
+  return price + price * fee;
 }
 
 const product = "You don't know JS";
 const price = 12.5;
-const priceInUSD = convertTo(price, "USD");
-const priceInBRL = convertTo(price, "BRL");
+const priceInUSD = convertTo(price, RATE_GBP_TO_USD);
+const priceInBRL = addFee(convertTo(price, RATE_GBP_TO_BRL), FEE_BRL);
+const priceInEUR = addFee(convertTo(price, RATE_GBP_TO_EUR), FEE_EUR);
 
 console.log("Product: " + product);
 console.log("Price: $" + priceInUSD);
 console.log("Price: R$" + priceInBRL);
+console.log("Price: EUR" + priceInEUR);
 
 /* Expected output:
 
