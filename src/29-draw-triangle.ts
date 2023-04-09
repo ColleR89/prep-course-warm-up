@@ -9,7 +9,7 @@ function draw(cnt: number) {
   let i: number;
   for (i = 0; i < cnt + 1; i++) {
     console.log("*".repeat(i));
-  }
+  } //
 }
 
 draw(3);
